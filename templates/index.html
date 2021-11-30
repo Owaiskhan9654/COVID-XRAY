@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Covid AI Image Classifier and Segmentation</h2>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+                <span style="padding-left: 500px; margin-top:0">
+        <img id="result-path" style="margin-top:0px; border: 5px solid rgba(224,225,229,0.96);width: 256px;height: 256px;" data-image="red" class="active" src="static/Segmented-Positive1.jpg" alt="">
+ </span>
+            </div>
+        </div>
+        <div>
+
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+    </h3>
+</div>
+
+{% endblock %}
