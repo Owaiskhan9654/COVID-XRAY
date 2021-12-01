@@ -63,7 +63,7 @@ def model_predict(img_path,segment_img_path):
     modelss = semantic_segmentation(models)
     output_image_name = segment_img_path
     modelss.segmentAsPascalvoc(img_path, output_image_name=output_image_name)
-
+    print(output_image_name,"output image name")
     return preds,output_image_name
 
 @app.route('/', methods=['GET'])
@@ -83,7 +83,7 @@ def upload():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
         i=i+1
-        segment_img_path="static/Segmented-Positive"+str(i)+".jpg"
+        segment_img_path="/static/Segmented"+".jpg"
         preds,semantic_segment_path = model_predict(file_path,segment_img_path)
         result=preds
         return result,semantic_segment_path
