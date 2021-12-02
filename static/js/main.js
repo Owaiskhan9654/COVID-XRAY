@@ -50,12 +50,13 @@ $(document).ready(function () {
                 // Get and display the result
                 $('.loader').hide();
                 $('#result').fadeIn(600);
-                //$('.result-path').attr('src', 'url(static/Segmented-Positive1.png)')
-                //$('#result-path').src('url(' + 'static/Segmented-Positive1.png)');
+               
+                
                 console.log(data);
-                $('#result-path').fadeIn(600);
-
-                //$('#result-path').reload('static/Segmented-Positive1.png')//.attr('src', 'static/Segmented-Positive1.png')
+                $('#result-path').fadeIn(600);  
+                $("<img />").attr('src', '/static/Segmented.jpg' ).appendTo("#result-path");
+                // $('#result-path').attr('src', '/static/Segmented.jpg');
+                // $('#result-path').show();
                 $('#result').text(' Result:  ' + data);
                 console.log('Success!');
             },
